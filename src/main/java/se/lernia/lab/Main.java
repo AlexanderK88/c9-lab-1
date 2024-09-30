@@ -2,7 +2,7 @@ package se.lernia.lab;
 
 public class Main {
   public static void main(String[] args) {
-    Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount(null)));
+    Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount(new NoDiscount())));
 
     Product milk = new Product("Milk", 30.0, 5);
     applyDiscountAndDisplay(milk, discountChain);
@@ -15,7 +15,6 @@ public class Main {
 
     Product smallMilk = new Product("Milk", 30.0, 3);
     applyDiscountAndDisplay(smallMilk, discountChain);
-
   }
 
   public static void applyDiscountAndDisplay(Product product, Discount discountChain) {

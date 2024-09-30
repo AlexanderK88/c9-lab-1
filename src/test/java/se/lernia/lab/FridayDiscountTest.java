@@ -9,20 +9,20 @@ class FridayDiscountTest {
   @Test
   void testFridayDiscountApplies() {
     LocalDate friday = LocalDate.of(2024, 9, 27);
-    Product product = new Product("Juice", 10.0, 2);
+    Product product = new Product("Juice", 15.0, 2);
 
-    Discount fridayDiscount = new FridayDiscount(null, friday);
+    Discount fridayDiscount = new FridayDiscount(new NoDiscount(), friday);
     double discount = fridayDiscount.apply(product);
 
-    assertThat(discount).isEqualTo(10.0 * 2 * 0.10);
+    assertThat(discount).isEqualTo(15.0 * 2 * 0.10);
   }
 
   @Test
   void testFridayDiscountDoesNotApplyIfNotFriday() {
     LocalDate notFriday = LocalDate.of(2024, 9, 26);
-    Product product = new Product("Juice", 10.0, 2);
+    Product product = new Product("Juice", 15.0, 2);
 
-    Discount fridayDiscount = new FridayDiscount(null, notFriday);
+    Discount fridayDiscount = new FridayDiscount(new NoDiscount(), notFriday);
     double discount = fridayDiscount.apply(product);
 
     assertThat(discount).isEqualTo(0.0);

@@ -7,8 +7,8 @@ class QuantityDiscountTest {
 
   @Test
   void testQuantityDiscountApplies() {
-    Product product = new Product("Bread", 15.0, 5);
-    Discount quantityDiscount = new QuantityDiscount(null);
+    Product product = new Product("Bread", 20.0, 5);
+    Discount quantityDiscount = new QuantityDiscount(new NoDiscount());
 
     double discount = quantityDiscount.apply(product);
     assertThat(discount).isEqualTo(5 * 10.0);
@@ -16,10 +16,10 @@ class QuantityDiscountTest {
 
   @Test
   void testQuantityDiscountDoesNotApplyIfQuantityLessThanFive() {
-    Product product = new Product("Juice", 10.0, 4);
-    Discount quantityDiscount = new QuantityDiscount(null);
+    Product product = new Product("Juice", 20.0, 4);
+    Discount quantityDiscount = new QuantityDiscount(new NoDiscount());
 
     double discount = quantityDiscount.apply(product);
-    assertThat(discount).isEqualTo(0.0); // No discount because quantity < 5
+    assertThat(discount).isEqualTo(0.0);
   }
 }

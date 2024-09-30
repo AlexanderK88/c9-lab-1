@@ -3,7 +3,7 @@ package se.lernia.lab;
 public class MilkDiscount extends BaseDiscount{
 
   public MilkDiscount(Discount nextDiscount) {
-    super(nextDiscount);
+    super(nextDiscount != null ? nextDiscount : new NoDiscount());
   }
 
   @Override

@@ -12,7 +12,7 @@ public class FridayDiscount extends BaseDiscount {
   }
 
   public FridayDiscount(Discount nextDiscount, LocalDate currentDate) {
-    super(nextDiscount);
+    super(nextDiscount != null ? nextDiscount : new NoDiscount());
     this.currentDate = currentDate;
   }
 
