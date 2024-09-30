@@ -5,13 +5,20 @@ import java.time.LocalDate;
 
 public class FridayDiscount extends BaseDiscount {
 
+  private final LocalDate currentDate;
+
   public FridayDiscount(Discount nextDiscount) {
+    this(nextDiscount, LocalDate.now());
+  }
+
+  public FridayDiscount(Discount nextDiscount, LocalDate currentDate) {
     super(nextDiscount);
+    this.currentDate = currentDate;
   }
 
   @Override
   protected boolean isApplicable(Product product) {
-    return LocalDate.now().getDayOfWeek() == DayOfWeek.FRIDAY;
+    return currentDate.getDayOfWeek() == DayOfWeek.FRIDAY;
   }
 
   @Override

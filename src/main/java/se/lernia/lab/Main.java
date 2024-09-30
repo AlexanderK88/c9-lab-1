@@ -4,16 +4,16 @@ public class Main {
   public static void main(String[] args) {
     Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount(null)));
 
-    Product milk = new Product("Milk", 20.0, 5);
+    Product milk = new Product("Milk", 30.0, 5);
     applyDiscountAndDisplay(milk, discountChain);
 
-    Product bread = new Product("Bread", 15.0, 5);
+    Product bread = new Product("Bread", 20.0, 5);
     applyDiscountAndDisplay(bread, discountChain);
 
-    Product juice = new Product("Juice", 10.0, 7);
+    Product juice = new Product("Juice", 15.0, 7);
     applyDiscountAndDisplay(juice, discountChain);
 
-    Product smallMilk = new Product("Milk", 20.0, 3);
+    Product smallMilk = new Product("Milk", 30.0, 3);
     applyDiscountAndDisplay(smallMilk, discountChain);
 
   }
