@@ -16,7 +16,7 @@ public class FridayDiscount extends BaseDiscount {
 
   @Override
   protected double calculateDiscount(Product product) {
-    return product.price() * 0.10;
+    return product.price() * product.quantity() * 0.10;
   }
 
   @Override
