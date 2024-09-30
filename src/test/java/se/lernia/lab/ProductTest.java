@@ -16,9 +16,9 @@ class ProductTest {
 
   @Test
   void testProductPriceCalculation() {
-    Product product = new Product("Milk", 15.0, 5);
+    Product product = new Product("Milk", 30.0, 5);
 
     double totalPrice = product.price() * product.quantity();
-    assertThat(totalPrice).isEqualTo(75.0);
+    assertThat(totalPrice).isEqualTo(150.0);
   }
 }
