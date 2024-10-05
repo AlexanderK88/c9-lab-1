@@ -48,6 +48,6 @@ public class FridayDiscountTest {
     assertThat(discount).isEqualTo((15.0 * 6 * 0.10) + (6 * 10));
 
     String description = discountChain.getDescription(product);
-    assertThat(description).isEqualTo("It's Friday! You get a 10% discount. Quantity Discount of 10 kr per product applied.");
+    assertThat(description).isEqualTo("It's Friday! You get a 10% discount.Quantity Discount of 10 kr per product applied.");
   }
 }

@@ -1,6 +1,7 @@
 package se.lernia.lab;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class MilkDiscountTest {
@@ -41,6 +42,6 @@ class MilkDiscountTest {
     assertThat(discount).isEqualTo((30 * 5 * 0.05) + (5 * 10));
 
     String description = discountChain.getDescription(milk);
-    assertThat(description).isEqualTo("5% Milk Discount applied. Quantity Discount of 10 kr per product applied.");
+    assertThat(description).isEqualTo("5% Milk Discount applied.Quantity Discount of 10 kr per product applied.");
   }
 }

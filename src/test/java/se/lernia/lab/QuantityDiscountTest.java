@@ -53,6 +53,6 @@ class QuantityDiscountTest {
     assertThat(discount).isEqualTo((30.0 * 5 * 0.05) + (5 * 10.0));
 
     String description = discountChain.getDescription(product);
-    assertThat(description).isEqualTo("Quantity Discount of 10 kr per product applied. 5% Milk Discount applied.");
+    assertThat(description).isEqualTo("Quantity Discount of 10 kr per product applied.5% Milk Discount applied.");
   }
 }

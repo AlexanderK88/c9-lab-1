@@ -1,6 +1,6 @@
 package se.lernia.lab;
 
-public class QuantityDiscount extends BaseDiscount{
+public class QuantityDiscount extends BaseDiscount {
 
   public QuantityDiscount(Discount nextDiscount) {
     super(nextDiscount != null ? nextDiscount : new NoDiscount());
